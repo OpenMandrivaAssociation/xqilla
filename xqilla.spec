@@ -5,7 +5,7 @@
 
 Name: xqilla
 Version: 2.1.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 Group: System/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -45,6 +45,8 @@ XQilla is an XQuery and XPath 2 library.
 %package -n %{libxqilla_devel}
 Summary: Xqilla devel library
 Group: Development/Databases
+Provides: libxqilla-devel = %epoch:%version
+Provides: xqilla-devel = %epoch:%version
 
 %description  -n %{libxqilla_devel}
 Xqilla devel library
