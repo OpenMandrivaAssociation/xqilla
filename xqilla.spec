@@ -5,7 +5,7 @@
 
 Name: xqilla
 Version: 2.1.1
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 1
 Group: System/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
