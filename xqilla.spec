@@ -5,7 +5,7 @@
 
 Name: xqilla
 Version: 2.1.1
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 1
 Group: System/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -47,6 +47,7 @@ Summary: Xqilla devel library
 Group: Development/Databases
 Provides: libxqilla-devel = %epoch:%version
 Provides: xqilla-devel = %epoch:%version
+Requires: %libxqilla = %epoch:%version-%release
 
 %description  -n %{libxqilla_devel}
 Xqilla devel library
