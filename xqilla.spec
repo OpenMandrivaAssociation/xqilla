@@ -4,16 +4,14 @@
 %{?_enable_debug: %{expand: %%global enable_debug 1}}
 
 Name: xqilla
-Version: 2.1.1
-Release: %mkrel 5
+Version: 2.3.0
+Release: %mkrel 1
 Epoch: 1
 Group: System/Libraries
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Summary: XQilla is an XQuery and XPath 2 library
 URL: http://xqilla.sourceforge.net/HomePage
 License:  Apache License v2
-Source0: %tarbname-%version.tar.gz
-Patch0: XQilla-2.1.1-lib64.patch
+Source0: http://downloads.sourceforge.net/project/xqilla/xqilla/%{version}/%{tarbname}-%{version}.tar.gz
 BuildRequires: xerces-c-devel >= 2.8.0
 BuildRequires: libicu-devel 
 
@@ -55,16 +53,14 @@ Xqilla devel library
 %files -n  %{libxqilla_devel}
 %defattr(0755,root,root)
 %{_libdir}/libxqilla.so
-%{_libdir}/libxqilla.la
 %{_includedir}/xqilla
+%{_includedir}/xqc.h
 
 %prep
 %setup -q -n %tarbname-%version
-%if "%_lib" != "lib"
-%patch0 -p1
-%endif
 
 %build
+autoreconf -fi
 CPPFLAGS="-DPIC -fPIC" 
 export CPPFLAGS
 
@@ -78,9 +74,4 @@ export CPPFLAGS
 %make
 
 %install
-rm -rf %buildroot
 make DESTDIR=%buildroot install
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
