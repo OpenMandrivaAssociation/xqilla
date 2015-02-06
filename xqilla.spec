@@ -5,7 +5,7 @@
 
 Name: xqilla
 Version: 2.3.0
-Release: %mkrel 1
+Release: 2
 Epoch: 1
 Group: System/Libraries
 Summary: XQilla is an XQuery and XPath 2 library
