@@ -12,6 +12,11 @@ Summary: XQilla is an XQuery and XPath 2 library
 URL: https://xqilla.sourceforge.net/HomePage
 License:  Apache License v2
 Source0: http://downloads.sourceforge.net/project/xqilla/xqilla/%{version}/%{tarbname}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: xerces-c-devel >= 2.8.0
 BuildRequires: libicu-devel 
 
